@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تم ارسال الرسالة | سما اورy</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #fff; /* Do not change */
+      color: #333;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease-in-out;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #444;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .gif {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      background: url('https://i.gifer.com/origin/11/1184b4c0aa977f925dde58d2075772dd_w200.gif') no-repeat center/contain;
+      animation: popIn 1.2s ease-in-out;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>تم ارسال الرسالة الى الايميل الخاص بنا , سنقوم بارسال الرد لايميلك قريبا</h1>
+    <div class="gif"></div>
+  </div>
+
+  <script>
+    // Navigate to another website after 3 seconds
+    setTimeout(() => {
+      window.location.href = "http://127.0.0.1:5500/Sama%20Ur/indexAR.html"; // Replace with your target URL
+    }, 2000);
+
+    // Manual navigation
+    function navigateHome() {
+      alert('Navigating to home!');
+      window.location.href = "http://127.0.0.1:5500/Sama%20Ur/indexAR.html"; // Replace with your target URL
+    }
+  </script>
+</body>
+</html>
