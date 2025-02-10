@@ -246,8 +246,8 @@
 }
 
 
-        /* Header Section */
-        header {
+ /* Header Section */
+header {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -257,6 +257,8 @@
     color: #5995CC;
     position: relative;
     overflow: hidden;
+    padding: 0 10px; /* Prevent unwanted white space */
+    box-sizing: border-box;
 }
 
 header video {
@@ -272,19 +274,19 @@ header video {
 header::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0; /* Shorthand for top, right, bottom, left = 0 */
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 header h1 {
     font-size: 4rem;
-    font-weight: bold;color: white;
+    font-weight: bold;
+    color: white;
     z-index: 2;
     animation: fadeInDown 1s ease-in-out;
+    margin: 0; /* Ensure no extra space */
+    padding: 0;
 }
 
 .typing-text {
@@ -298,27 +300,33 @@ header h1 {
     animation: typing 4s steps(50, end) infinite, blink 0.7s step-end infinite;
 }
 
+/* Mobile Fix */
+@media (max-width: 767px) {
+    header {
+        padding: 0 5%; /* Ensure content is centered properly */
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Adjusted for smaller screens */
+    }
+
+    .typing-text {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+}
+
 /* Typing effect */
 @keyframes typing {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
 }
 
 /* Blinking cursor effect */
 @keyframes blink {
-    0%, 100% {
-        border-color: transparent;
-    }
-    50% {
-        border-color: white;
-    }
+    0%, 100% { border-color: transparent; }
+    50% { border-color: white; }
 }
 
 .scroll-indicator {
@@ -337,37 +345,16 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Animations for fadeIn */
+/* Fade-in animation */
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Bounce animation for scroll indicator */
+/* Bounce animation */
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 
