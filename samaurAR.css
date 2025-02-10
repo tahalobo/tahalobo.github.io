@@ -492,8 +492,7 @@ Header Style
 
 /* 🌟 Mobile Menu - RTL Support */
 @media (max-width: 767px) {
-  /* Ensure header adjusts to content */
-  .nav li:last-child {
+.header-area{padding: 0px !important;}  .nav li:last-child {
     padding-right: 0px; /* Adjust padding for last button */
   }
 
