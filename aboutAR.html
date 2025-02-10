@@ -50,7 +50,8 @@
   
     <style>
         /* General Styles */
-        * {
+        * {    max-width: 100%; /* Ensures no element extends beyond the screen width */
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -64,8 +65,13 @@
             background: #f9fafc;
             color: #333;
             overflow-x: hidden;
-            direction: rtl;
+            direction: rtl;  max-width: 100%;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
         }
+        html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
 
         
 ::selection {
@@ -237,7 +243,7 @@
     }
 
     .logo h1 {
-        padding-left: 10px; /* Adjusted padding for mobile screens */
+        padding-left: 0; /* Adjusted padding for mobile screens */
     }
 
     .nav li:last-child {
@@ -245,8 +251,9 @@
     }
 }
 
-/* Ensure Fullscreen Video on iOS */
-header {
+
+        /* Header Section */
+        header {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -256,37 +263,34 @@ header {
     color: #5995CC;
     position: relative;
     overflow: hidden;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 header video {
-    position: fixed; /* Ensures it covers full screen on iOS */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
 }
 
-
 header::before {
     content: '';
     position: absolute;
-    inset: 0; /* Shorthand for top, right, bottom, left = 0 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 header h1 {
     font-size: 4rem;
-    font-weight: bold;
-    color: white;
+    font-weight: bold;color: white;
     z-index: 2;
     animation: fadeInDown 1s ease-in-out;
-    margin: 0; /* Ensure no extra space */
-    padding: 0;
 }
 
 .typing-text {
@@ -300,33 +304,27 @@ header h1 {
     animation: typing 4s steps(50, end) infinite, blink 0.7s step-end infinite;
 }
 
-/* Mobile Fix */
-@media (max-width: 767px) {
-    header {
-        padding: 0 5%; /* Ensure content is centered properly */
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Adjusted for smaller screens */
-    }
-
-    .typing-text {
-        font-size: 1.2rem;
-        max-width: 90%;
-    }
-}
-
 /* Typing effect */
 @keyframes typing {
-    0% { width: 0; }
-    50% { width: 100%; }
-    100% { width: 0; }
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
 }
 
 /* Blinking cursor effect */
 @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: white; }
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
 }
 
 .scroll-indicator {
@@ -345,16 +343,37 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Fade-in animation */
+/* Animations for fadeIn */
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Bounce animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce animation for scroll indicator */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 
@@ -562,7 +581,8 @@ footer::before {
             line-height: 1.8;
         }
 /* Video and Text Section */
-.video-text-section {
+.video-text-section {        width: 100%; /* Ensures it doesn’t overflow */
+
     position: relative;
     width: 100%;
     margin: 4rem auto;
@@ -590,8 +610,8 @@ footer::before {
     color: white;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    max-width: 60%;
-    margin: auto;
+    max-width: 60%;       
+     margin: auto;
     transform: translateY(0);
     opacity: 1;
     transition: all 0.5s ease-in-out;
