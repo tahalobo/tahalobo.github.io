@@ -245,8 +245,7 @@
     }
 }
 
-
- /* Header Section */
+/* Ensure Fullscreen Video on iOS */
 header {
     height: 100vh;
     display: flex;
@@ -257,19 +256,20 @@ header {
     color: #5995CC;
     position: relative;
     overflow: hidden;
-    padding: 0 10px; /* Prevent unwanted white space */
+    padding: 0;
     box-sizing: border-box;
 }
 
 header video {
-    position: absolute;
+    position: fixed; /* Ensures it covers full screen on iOS */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: 0;
 }
+
 
 header::before {
     content: '';
