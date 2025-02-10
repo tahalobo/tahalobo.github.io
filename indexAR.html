@@ -388,14 +388,7 @@
           </filter>
         </defs>
       </svg>
-      <div class="bubbles">
-        <div class="bubble bubble1"></div>
-        <div class="bubble bubble2"></div>
-        <div class="bubble bubble3"></div>
-        <div class="bubble bubble4"></div>
-        <div class="bubble bubble5"></div>
-      </div>
-    </div>
+ 
   
     <div class="contact-details">
       <h1>زورونا </h1>
@@ -422,184 +415,222 @@
   </div>
   
   <style>
-   .contact-us-container {
-width: 100%; /* Takes full width of its parent */
-  min-height: 100vh; /* Use min-height to allow growth if content overflows */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(40deg, #065864, #065864);
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds the viewport height */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  position: relative;
-  padding: 20px;
-   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-
-    /* Bubble Animation */
-    .bubble-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      filter: url(#goo);
+    .contact-us-container {
+        width: 100vw;
+      max-height: 64vh; /* Drastically reduced height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Keeps content centered */
+        align-items: center;
+        background: linear-gradient(40deg, #065864, #065864);
+        overflow-x: hidden;
+        position: relative;
+        padding: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
+        color: white;
     }
-  
-    .bubbles {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-  
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: float infinite cubic-bezier(0.36, 0, 0.66, -0.56);
-    }
-  
-    .bubble1 {
-      background: radial-gradient(circle, rgba(241, 141, 27, 0.8), rgba(241, 141, 27, 0));
-      width: 100px;
-      height: 100px;
-      top: 30%;
-      left: 10%;
-      animation-duration: 6s;
-    }
-  
-    .bubble2 {
-      background: radial-gradient(circle, rgba(241, 141, 27, 0.8), rgba(6, 88, 100, 0));
-      width: 120px;
-      height: 120px;
-      top: 50%;
-      left: 40%;
-      animation-duration: 5s;
-    }
-  
-    .bubble3 {
-      background: radial-gradient(circle, rgba(241, 141, 27, 0.8), rgba(241, 141, 27, 0));
-      width: 90px;
-      height: 90px;
-      top: 70%;
-      left: 20%;
-      animation-duration: 4s;
-    }
-  
-    .bubble4 {
-      background: radial-gradient(circle, rgba(241, 141, 27, 0.8), rgba(6, 88, 100, 0));
-      width: 110px;
-      height: 110px;
-      top: 20%;
-      left: 70%;
-      animation-duration: 7s;
-    }
-  
-    .bubble5 {
-      background: radial-gradient(circle, rgba(241, 141, 27, 0.8), rgba(241, 141, 27, 0));
-      width: 140px;
-      height: 140px;
-      top: 60%;
-      left: 80%;
-      animation-duration: 6s;
-    }
-  
-    /* Animation */
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-      }
-      25% {
-        transform: translateY(-40px) translateX(20px);
-      }
-      50% {
-        transform: translateY(0) translateX(40px);
-      }
-      75% {
-        transform: translateY(40px) translateX(-20px);
-      }
-      100% {
-        transform: translateY(0) translateX(0);
-      }
-    }
-  
+    
     /* Contact Details */
     .contact-details {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 20px;
+        text-align: center;
+        z-index: 10;
+        padding: 10px;
     }
-  
+    
     .contact-details h1 {
-  font-size: clamp(24px, 5vw, 36px); /* Scales from 24px to 36px based on viewport width */
-  margin-bottom: 10px;
-  color: white;
-}
-  
-  
-.contact-details p {
-  font-size: clamp(14px, 3vw, 18px); /* Scales from 14px to 18px */
-  margin-bottom: 20px;
-  color: white;
-}
-
-.contact-details ul {
-  font-size: clamp(14px, 2.5vw, 16px); /* Scales text size */
-  margin: 0 0 20px 0;
-  color: white;
-}
- 
-  
-    .contact-details ul li {
-      margin: 5px 0;
+        font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
+        margin-bottom: 5px;
     }
-  
+    
+    .contact-details p {
+        font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
+        margin-bottom: 10px;
+    }
+    
+    .contact-details ul {
+        font-size: clamp(12px, 2vw, 14px);
+        margin-bottom: 10px;
+    }
+    
+    /* Social Media Links */
     .social-media a {
-      text-decoration: none;
-      color: #F18D1B;
-      margin: 0 10px;
-      font-size: clamp(14px, 2.5vw, 18px); /* Scale links */
-      transition: color 0.3s;
+        text-decoration: none;
+        color: #F18D1B;
+        margin: 0 5px;
+        font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
+        transition: color 0.3s;
     }
-  
+    
     .social-media a:hover {
-      color: #065864;
+        color: #065864;
     }
-  
-    /* Map */
+    
+    /* Smaller Map Section */
     .map {
-  flex-grow: 1; /* Allows the map to expand when space is available */
-  width: 100%; /* Ensures it spans the full container width */
-  max-width: 800px; /* Prevents it from becoming too large */
-  height: clamp(200px, 40vh, 400px); /* Dynamically adjusts height based on viewport height */
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-  
+        width: 90%;
+        max-width: 500px; /* Smaller map */
+        height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
+        margin-top: 10px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    
     /* Footer */
     .footer {
-      position: relative;
-      z-index: 10;
-      margin-top: 20px;
-      color: #ffffff;
-      font-size: 14px;
+        margin-top: 10px;
+        color: #ffffff;
+        font-size: 1.2rem; /* Smaller footer text */
+        font-weight: 400;
     }
-  
-    /* Responsive */
+    
+    /* Hide on Large Screens */
     @media (min-width: 1024px) {
-      .contact-us-container {
-        display: none;
-      }
+        .contact-us-container {
+            display: none;
+        }
     }
-  </style>
-  
+    
+          </style>
+          
+          <footer> 
+            <div style="align-items: center ;" class="container">
+              <div class="col-lg-12">
+                <div class="footer-row">
+                  <!-- Rights Text -->
+                  <p class="rights-text">تم بواسطة سما اور في عام 2025 , جميع الحقوق محفوظة</p>
+                  <!-- Logo on the Right -->
+                  <img src="logo.png" alt="Logo" class="footer-logo">
+              </div>      
+                <!-- Contact Information Section -->
+                <div class="contact-info">
+                  <p>رقم الهاتف: <a href="https://wa.me/770 263 3615" target="_blank">+964 770 263 3615</a></p>
+                  <p>الايميل الاساسي: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi", target="_blank">Admin@samaursoft.net</a></p>
+                  <p>الايميل الثانوي: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi", target="_blank">Rahman@samaursoft.com</a></p>
+                  <p>موقعنا: <a href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA" , target="_blank"> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3 </a></p>
+                </div>
+          
+          
+               
+              </div>
+            </div>
+          
+            <!-- CSS for Contact Info in a Row, Responsive Design, and Button Animation -->
+            <style>
+    
+    .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center everything */
+        gap: 10px; /* Add some spacing between text and logo */
+        text-align: center;    font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .rights-text {
+      font-size: 1.6rem;
+      font-weight: 500;    margin: 0;
+        white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    }
+    
+    /* Keep the logo on the same line */
+    .footer-logo {
+        width: 50px; /* Adjust size */
+        height: auto;
+    }
+    
+    
+              /* Basic footer styling */
+              footer p {
+                margin-bottom: 5px;    font-size: 1.6rem;
+                font-weight: 500;
+              }
+          
+    
+              footer::before {
+      background: url(contact-dec-01.png);
+      position: absolute;
+      left: 30px;
+      transform: rotate(180deg);
+      opacity: 1;
+      bottom: 0;
+      width: 318px;
+      height: 119px;
+      content: '';
+      z-index: 2;
+    }
+    
+    
+    /* Adding the small copyright image in the top-right */
+    footer::after {
+      content: "";
+       top: 10px; /* Distance from the top */
+      right: 10px; /* Distance from the right */
+      width: 50px; /* Smaller size */
+      height: 50px; /* Smaller size */
+      background-image: url('قق.png'); /* Add your copyright image */
+      
+      opacity: 0.7; /* Slight transparency */
+     
+      z-index: 10; /* Ensure it stays on top */
+    }
+    
+              .contact-info {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 10px;
+              }
+          
+              .contact-info p {
+                margin: 0 15px;
+                font-size: 1.2rem;
+                font-weight: 500;          }
+          
+              /* Media query for small screens (phones) */
+              @media (max-width: 768px) {
+                /* Hide contact information on small screens */
+                .contact-info {
+                  display: none;
+                }
+          
+                /* Show the button on small screens */
+                #showContactBtn {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  background-color: #4CAF50;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+                }
+          
+                /* Button hover effect */
+                #showContactBtn:hover {
+                  background-color: #45a049;
+                }
+          
+                /* Animation for button fade-in */
+                @keyframes fadeIn {
+                  0% {
+                    opacity: 0;
+                  }
+                  100% {
+                    opacity: 1;
+                  }
+                }
+              }
+          
+              /* Ensure the button is hidden on larger screens */
+              @media (min-width: 769px) {
+                #showContactBtn {
+                  display: none;
+                }
+              }
+            </style>
+          
   <footer style="direction: rtl;" > 
     <div style="align-items: center ;" class="container">
       <div class="col-lg-12">
