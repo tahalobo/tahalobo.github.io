@@ -500,7 +500,7 @@ Header Style
   .background-header {
     height: auto !important;
     min-height: 120px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     position: fixed;
     z-index: 1000;
   }
@@ -516,7 +516,7 @@ Header Style
     flex-direction: column;
     align-items: center;
     display: none; /* Hide by default */
-    padding: 15px 0;
+    padding: 5px 0;
     z-index: 9999; /* Make sure it’s above content */
   }
 
