@@ -1089,6 +1089,74 @@ footer::before {
             }
           </style>
         </section>
+        <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+          <!-- Tooltip Container -->
+          <div style="position: relative; display: inline-block;">
+            <!-- Button -->
+           <a href="UrCargo.html"><button 
+             
+            style="
+            background: linear-gradient(45deg, #00756E , #5995CC ); 
+            color: white; 
+              border: none; 
+              border-radius: 50%; 
+              width: 60px; 
+              height: 60px; 
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
+              cursor: pointer; 
+              font-size: 20px; 
+              display: flex; 
+              align-items: center; 
+              justify-content: center; 
+              transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
+              background-size: 200% 200%;
+              background-position: 0% 50%;
+              z-index: 9999;"
+            onmouseover="showTooltip()" 
+            onmouseout="hideTooltip()"
+            onmousedown="showTooltip()" 
+            onmouseup="hideTooltip()"
+          >
+            🌐
+          </button></a> 
+            <!-- Tooltip -->
+            <span id="tooltip" style="
+              visibility: hidden; 
+              background-color: #333; 
+              color: #fff; 
+              text-align: center; 
+              border-radius: 5px; 
+              padding: 5px 10px; 
+              position: absolute; 
+              bottom: 70px; 
+              left: 50%; 
+              transform: translateX(-50%);
+              white-space: nowrap; 
+              z-index: 9999; 
+              font-size: 12px;
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+              opacity: 0; 
+              transition: opacity 0.3s ease;
+            ">
+              Translate To English
+            </span>
+          </div>
+        </div>
+        
+        <script>
+          const tooltip = document.getElementById("tooltip");
+        
+          function showTooltip() {
+            tooltip.style.visibility = "visible";
+            tooltip.style.opacity = "1";
+          }
+        
+          function hideTooltip() {
+            tooltip.style.visibility = "hidden";
+            tooltip.style.opacity = "0";
+          }
+        </script>
+        
         <div class="contact-us-container">
           <div class="bubble-container">
             <svg xmlns="http://www.w3.org/2000/svg">
@@ -1501,74 +1569,6 @@ footer::before {
           </script>
         </footer>
      
-      
-        <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-          <!-- Tooltip Container -->
-          <div style="position: relative; display: inline-block;">
-            <!-- Button -->
-           <a href="UrCargo.html"><button 
-             
-            style="
-            background: linear-gradient(45deg, #00756E , #5995CC ); 
-            color: white; 
-              border: none; 
-              border-radius: 50%; 
-              width: 60px; 
-              height: 60px; 
-              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
-              cursor: pointer; 
-              font-size: 20px; 
-              display: flex; 
-              align-items: center; 
-              justify-content: center; 
-              transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
-              background-size: 200% 200%;
-              background-position: 0% 50%;
-              z-index: 9999;"
-            onmouseover="showTooltip()" 
-            onmouseout="hideTooltip()"
-            onmousedown="showTooltip()" 
-            onmouseup="hideTooltip()"
-          >
-            🌐
-          </button></a> 
-            <!-- Tooltip -->
-            <span id="tooltip" style="
-              visibility: hidden; 
-              background-color: #333; 
-              color: #fff; 
-              text-align: center; 
-              border-radius: 5px; 
-              padding: 5px 10px; 
-              position: absolute; 
-              bottom: 70px; 
-              left: 50%; 
-              transform: translateX(-50%);
-              white-space: nowrap; 
-              z-index: 9999; 
-              font-size: 12px;
-              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-              opacity: 0; 
-              transition: opacity 0.3s ease;
-            ">
-              Translate To English
-            </span>
-          </div>
-        </div>
-        
-        <script>
-          const tooltip = document.getElementById("tooltip");
-        
-          function showTooltip() {
-            tooltip.style.visibility = "visible";
-            tooltip.style.opacity = "1";
-          }
-        
-          function hideTooltip() {
-            tooltip.style.visibility = "hidden";
-            tooltip.style.opacity = "0";
-          }
-        </script>
-        
+   
 </body>
 </html>
