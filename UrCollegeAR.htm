@@ -1125,7 +1125,7 @@ footer::before {
                 </filter>
               </defs>
             </svg>
-            
+          </div>
         
           <div class="contact-details">
             <h1>زورونا </h1>
@@ -1134,8 +1134,8 @@ footer::before {
            <a  style="color: #bbd1e8;" ,href="https://wa.me/770 263 3615" , target="_blank"><li><strong>رقم الهاتف:</strong> +964 (0) 770 263 3615</li></a>   
         <a  style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi" , target="_blank"> <li><strong>الايميل الاساسي:</strong>Admin@samaursoft.net</li></a>     
            <a style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi" , target="_blank"> <li><strong> الايميل القانوي:</strong>Rahman@samaursoft.com</li></a>  
-           <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
-           </ul>
+             <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
+            </ul>
             <div class="social-media">
               <a href="#" target="_blank">Instagram</a>
             </div>
@@ -1150,84 +1150,85 @@ footer::before {
             <p>&copy;  تم بواسطة سما اور في عام 2025 , جميع الحقوق محفوظة</p>
           </div>
         </div>
+        
         <style>
-          .contact-us-container {
-              width: 100vw;
-            max-height: 64vh; /* Drastically reduced height */
-              display: flex;
-              flex-direction: column;
-              justify-content: center; /* Keeps content centered */
-              align-items: center;
-              background: linear-gradient(40deg, #065864, #065864);
-              overflow-x: hidden;
-              position: relative;
-              padding: 10px;
-              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
-              color: white;
-          }
-          
-          /* Contact Details */
-          .contact-details {
-              text-align: center;
-              z-index: 10;
-              padding: 10px;
-          }
-          
-          .contact-details h1 {
-              font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
-              margin-bottom: 5px;
-          }
-          
-          .contact-details p {
-              font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
-              margin-bottom: 10px;
-          }
-          
-          .contact-details ul {
-              font-size: clamp(12px, 2vw, 14px);
-              margin-bottom: 10px;
-          }
-          
-          /* Social Media Links */
-          .social-media a {
-              text-decoration: none;
-              color: #F18D1B;
-              margin: 0 5px;
-              font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
-              transition: color 0.3s;
-          }
-          
-          .social-media a:hover {
-              color: #065864;
-          }
-          
-          /* Smaller Map Section */
-          .map {
-              width: 90%;
-              max-width: 500px; /* Smaller map */
-              height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
-              margin-top: 10px;
-              border-radius: 6px;
-              overflow: hidden;
-          }
-          
-          /* Footer */
-          .footer {
-              margin-top: 10px;
-              color: #ffffff;
-              font-size: 1.2rem; /* Smaller footer text */
-              font-weight: 400;
-          }
-          
-          /* Hide on Large Screens */
-          @media (min-width: 1024px) {
-              .contact-us-container {
-                  display: none;
-              }
-          }
-          
-                </style>
-                
+  .contact-us-container {
+      width: 100vw;
+    max-height: 64vh; /* Drastically reduced height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Keeps content centered */
+      align-items: center;
+      background: linear-gradient(40deg, #065864, #065864);
+      overflow-x: hidden;
+      position: relative;
+      padding: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
+      color: white;
+  }
+  
+  /* Contact Details */
+  .contact-details {
+      text-align: center;
+      z-index: 10;
+      padding: 10px;
+  }
+  
+  .contact-details h1 {
+      font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
+      margin-bottom: 5px;
+  }
+  
+  .contact-details p {
+      font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
+      margin-bottom: 10px;
+  }
+  
+  .contact-details ul {
+      font-size: clamp(12px, 2vw, 14px);
+      margin-bottom: 10px;
+  }
+  
+  /* Social Media Links */
+  .social-media a {
+      text-decoration: none;
+      color: #F18D1B;
+      margin: 0 5px;
+      font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
+      transition: color 0.3s;
+  }
+  
+  .social-media a:hover {
+      color: #065864;
+  }
+  
+  /* Smaller Map Section */
+  .map {
+      width: 90%;
+      max-width: 500px; /* Smaller map */
+      height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
+      margin-top: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+  }
+  
+  /* Footer */
+  .footer {
+      margin-top: 10px;
+      color: #ffffff;
+      font-size: 1.2rem; /* Smaller footer text */
+      font-weight: 400;
+  }
+  
+  /* Hide on Large Screens */
+  @media (min-width: 1024px) {
+      .contact-us-container {
+          display: none;
+      }
+  }
+  
+        </style>
+        
                 <footer> 
                   <div style="align-items: center ;" class="container">
                     <div class="col-lg-12">
