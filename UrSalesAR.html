@@ -285,39 +285,16 @@ header h1 {
 }
 
 .typing-text {
-    font-size: 1.5rem;
+    font-size: 20px;
     max-width: 800px;
     margin-top: 1rem;
     z-index: 2;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid white; /* Simulates a blinking cursor */
-    animation: typing 4s steps(50, end) infinite, blink 0.7s step-end infinite;
-}
+ }
 
-/* Typing effect */
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
-}
-
-/* Blinking cursor effect */
-@keyframes blink {
-    0%, 100% {
-        border-color: transparent;
-    }
-    50% {
-        border-color: white;
-    }
-}
-
+ 
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -326,46 +303,13 @@ header h1 {
     font-size: 1.2rem;
     text-align: center;
     cursor: pointer;
-    animation: bounce 1.5s infinite;
-}
+ }
 
 .scroll-indicator span {
     display: block;
     font-size: 2rem;
 }
-
-/* Animations for fadeIn */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Bounce animation for scroll indicator */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+ 
 
 
 .js-preloader {
@@ -800,43 +744,12 @@ footer::before {
       المتصفح الخاص بك لا يدعم عرض المقاطع
       </video>
       <h1> نظام UrSales</h1>
-      <p class="typing-text"></p>
+      <p class="typing-text">نظام تم اعداده من قبل سما اور</p>
       <div class="scroll-indicator">
           اسحب للاسفل  <br>
           <span>⬇</span>
       </div> 
-      <script>
-          // JavaScript to add the text dynamically and restart the animation
-          document.addEventListener('DOMContentLoaded', () => {
-              const typingText = document.querySelector('.typing-text');
-              const text = 'نظام تم اعداده من قبل سما اور';
-              
-              // Function to inject and reset typing animation
-              const typeText = () => {
-                  typingText.textContent = ''; // Clear text content
-                  let i = 0;
-
-                  // Type one character at a time
-                  const typingInterval = setInterval(() => {
-                      if (i < text.length) {
-                          typingText.textContent += text[i];
-                          i++;
-                      } else {
-                          clearInterval(typingInterval);
-
-                          // Wait before restarting the typing effect
-                          setTimeout(() => {
-                              typingText.textContent = ''; // Clear text for restart
-                              i = 0;
-                              typeText(); // Restart typing
-                          }, 2000); // Delay before restarting
-                      }
-                  }, 100); // Typing speed (ms per character)
-              };
-
-              typeText(); // Start the typing effect
-          });
-      </script>
+       
   </header>
 
   <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
