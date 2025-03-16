@@ -835,91 +835,133 @@ footer::before {
       </script>
   </header>
     <!-- About Us Section -->
-    <section class="about-us">
-        <script>// Get the buttons and text overlay elements
-            const btn1 = document.getElementById("btn1");
-            const btn2 = document.getElementById("btn2");
-            const textOverlay = document.getElementById("text-overlay");
-            
-            // Function to handle text content update
-            function updateText(content) {
-                // Add 'hide' class to start the fade-out animation
-                textOverlay.classList.add("hide");
-                textOverlay.classList.remove("show");
-            
-                // Wait for the fade-out animation to complete before updating content
-                setTimeout(() => {
-                    textOverlay.innerHTML = content; // Update the content
-                    textOverlay.classList.remove("hide"); // Remove the 'hide' class
-                    textOverlay.classList.add("show"); // Add 'show' class for fade-in animation
-                }, 500); // Ensure this matches the CSS animation duration
-            }
-            
-            // Event listener for the first button
-            btn1.addEventListener("click", () => {
-                if (!btn1.classList.contains("active")) {
-                    btn1.classList.add("active"); // Activate button 1
-                    btn2.classList.remove("active"); // Deactivate button 2
-            
-                    // Update text for option 1
-                    updateText(`
-                        <h3>Our Story</h3>
-                        <p>With over 30 years of innovation and excellence, Sama Ur has pioneered the IT solutions landscape. We've tailored systems for diverse sectors, from academia and manufacturing to hotels and logistics. Our story is one of unwavering commitment and expertise. Our journey continues, driven by our passion for delivering exceptional solutions to our clients.</p>
-                    `);
-                }
-            });
-            
-            // Event listener for the second button
-            btn2.addEventListener("click", () => {
-                if (!btn2.classList.contains("active")) {
-                    btn2.classList.add("active"); // Activate button 2
-                    btn1.classList.remove("active"); // Deactivate button 1
-            
-                    // Update text for option 2
-                    updateText(`
-                        <h3>Our Vision</h3>
-                        <p>We strive to push the boundaries of technology and creativity, fostering partnerships that empower businesses worldwide. Our vision is to create a world where technology bridges gaps, simplifies complexities, and unlocks limitless opportunities for growth.</p>
-                    `);
-                }
-            });
-            </script>
-        <h2>About The System</h2>
-<p>UrCargo system is developed to efficiently and effectively manage the information of shipping and delivery companies. It is currently being used by specialized companies inside and outside of Iraq.</p></section>
+     <!-- About Us Section -->
+     <section class="about-us">
+      <script>// Get the buttons and text overlay elements
+          const btn1 = document.getElementById("btn1");
+          const btn2 = document.getElementById("btn2");
+          const textOverlay = document.getElementById("text-overlay");
+          
+          // Function to handle text content update
+          function updateText(content) {
+              // Add 'hide' class to start the fade-out animation
+              textOverlay.classList.add("hide");
+              textOverlay.classList.remove("show");
+          
+              // Wait for the fade-out animation to complete before updating content
+              setTimeout(() => {
+                  textOverlay.innerHTML = content; // Update the content
+                  textOverlay.classList.remove("hide"); // Remove the 'hide' class
+                  textOverlay.classList.add("show"); // Add 'show' class for fade-in animation
+              }, 500); // Ensure this matches the CSS animation duration
+          }
+          
+          // Event listener for the first button
+          btn1.addEventListener("click", () => {
+              if (!btn1.classList.contains("active")) {
+                  btn1.classList.add("active"); // Activate button 1
+                  btn2.classList.remove("active"); // Deactivate button 2
+          
+                  // Update text for option 1
+                  updateText(`
+                      <h3>Our Story</h3>
+                      <p>With over 30 years of innovation and excellence, Sama Ur has pioneered the IT solutions landscape. We've tailored systems for diverse sectors, from academia and manufacturing to hotels and logistics. Our story is one of unwavering commitment and expertise. Our journey continues, driven by our passion for delivering exceptional solutions to our clients.</p>
+                  `);
+              }
+          });
+          
+          // Event listener for the second button
+          btn2.addEventListener("click", () => {
+              if (!btn2.classList.contains("active")) {
+                  btn2.classList.add("active"); // Activate button 2
+                  btn1.classList.remove("active"); // Deactivate button 1
+          
+                  // Update text for option 2
+                  updateText(`
+                      <h3>Our Vision</h3>
+                      <p>We strive to push the boundaries of technology and creativity, fostering partnerships that empower businesses worldwide. Our vision is to create a world where technology bridges gaps, simplifies complexities, and unlocks limitless opportunities for growth.</p>
+                  `);
+              }
+          });
+          </script>
+      <h2>About The System</h2>
+
+
+
+<p>UrCargo system is developed to efficiently and effectively manage the information of shipping and delivery companies. It is currently being used by specialized companies inside and outside of Iraq.
+
+
+
+</p> </section>
+
 <section id="features-section" style="padding: 30px; background-color: #0f465e; color: white; opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease;">
-          <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Features of Our System</h2>
-          <div style="max-width: 800px; margin: 0 auto;  font-size: 1.4rem;
-          font-weight: 500; line-height: 1.8;">
-            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-              <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
-              <p style="margin: 0;">
-                    Manage shipments by traders or containers.
-              </p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
-            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-              <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
-              <p style="margin: 0;">
-                    Track shipments and ensure their delivery to traders.
-              </p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
-            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-              <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
-              <p style="margin: 0;">
-                    Track delivery according to delivery agents.
-              </p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
-      
-            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-              <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
-              <p style="margin: 0;">
-                    Financial transactions integrated with a comprehensive <a href="UrSales.html" style="color: #F18D1B;">ERP</a> system.
-              </p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
+        <h2 style="text-align: center;  font-size: 1.6rem;
+        font-weight: 500;     margin-bottom: 20px;">Features of Our System
+</h2>
+        <div style="max-width: 800px; margin: 0 auto; font-size: 1.3rem;
+        font-weight: 500;     line-height: 1.8;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+            <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
+            <p style="margin: 0;">
+              Manage shipments by traders or containers.
+
+
+
+
+
+        </p>
           </div>
-        </section>
+          <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+            <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
+            <p style="margin: 0;">
+              Track shipments and ensure their delivery to traders.
+
+
+
+        </p>
+          </div>
+          <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+            <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
+            <p style="margin: 0;">
+              Track delivery according to delivery agents.
+
+
+
+        </p>
+          </div>
+          <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+            <div style="min-width: 10px; height: 10px; background-color: #F18D1B; border-radius: 50%; margin-right: 10px; margin-top: 8px;"></div>
+            <p style="margin: 0;">
+              Financial transactions integrated with a comprehensive<a href="UrSales.html" style="color: #F18D1B;"> ERP</a> system.
+
+        </p>
+          </div>
+          <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); margin: 20px 0;">
+           
+      </section>
+      
+      <script>
+        // Add scroll animation when the section comes into view
+        document.addEventListener("DOMContentLoaded", () => {
+          const section = document.getElementById("features-section");
+      
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                section.style.opacity = 1;
+                section.style.transform = "translateY(0)";
+              }
+            });
+          });
+      
+          observer.observe(section);
+        });
+      </script>
+      
+ 
         <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
           <!-- Tooltip Container -->
           <div style="position: relative; display: inline-block;">
