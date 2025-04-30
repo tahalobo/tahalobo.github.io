@@ -706,46 +706,343 @@ footer::before {
         </div>
 
 </head>
-<body>
+<body>    <style>
+  /********************************
+   *        SECTION WRAPPER
+   ********************************/
+ /* === Modern Tech Background Theme === */
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 100%);
+    color: #0a1929;
+ }
+
+/* Dynamic Grid Pulse */
+.about-section::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(25, 130, 230, 0.1) 0px,
+            rgba(25, 130, 230, 0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(25, 130, 230, 0.1) 0px,
+            rgba(25, 130, 230, 0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    animation: gridPulse 12s linear infinite;
+    transform: translate(-25%, -25%) rotate(15deg);
+    z-index: 1;
+}
+
+/* Floating Tech Particles */
+.about-section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 50% 50%, 
+            rgba(45, 212, 191, 0.1) 0%, 
+            transparent 70%);
+    animation: particleFloat 20s linear infinite;
+    z-index: 2;
+}
+
+/* Holographic Effect */
+.holographic-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(120deg, 
+            rgba(255,255,255,0.3) 0%,
+            rgba(179,217,255,0.1) 50%,
+            rgba(255,255,255,0.3) 100%);
+    animation: hologramScan 8s linear infinite;
+    mix-blend-mode: soft-light;
+    z-index: 3;
+}
+
+/* Animated Code Matrix */
+.code-matrix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    opacity: 0.15;
+    z-index: 4;
+}
+
+.code-column {
+    display: flex;
+    flex-direction: column;
+    animation: codeFlow 20s linear infinite;
+}
+
+.code-character {
+    font-size: 1.2rem;
+    color: #2dd4bf;
+    opacity: 0;
+    animation: characterFade 1.5s ease-in-out infinite;
+}
+
+/* Floating Hexagons */
+.hexagon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.hexagon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(45, 212, 191, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hexFloat 25s linear infinite;
+}
+
+/* Dynamic Glow Effect */
+.glow-effect {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(45, 212, 191, 0.2) 0%,
+        rgba(25, 130, 230, 0.1) 30%,
+        transparent 60%);
+    animation: glowPulse 6s ease-in-out infinite;
+    z-index: 6;
+}
+
+/* ===== Animations ===== */
+@keyframes gridPulse {
+    0% { transform: translate(-25%, -25%) rotate(15deg) scale(1); }
+    50% { transform: translate(-25%, -25%) rotate(15deg) scale(1.2); }
+    100% { transform: translate(-25%, -25%) rotate(15deg) scale(1); }
+}
+
+@keyframes hologramScan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes codeFlow {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes characterFade {
+    0% { opacity: 0; transform: translateY(-10px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes hexFloat {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(720deg); }
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+@keyframes particleFloat {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ===== Content Styling ===== */
+.content {
+    position: relative;
+    z-index: 7;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(25, 130, 230, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(25, 130, 230, 0.1);
+    max-width: 800px;
+    margin: 2rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .code-character { font-size: 1rem; }
+    .content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    .hexagon { width: 40px; height: 40px; }
+}
+
+@media (max-width: 480px) {
+    .code-matrix { gap: 1rem; }
+    .content {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+  /* Dark overlay to increase contrast */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  /********************************
+   *         TEXT CONTENT
+   ********************************/
+  .about-content {
+    position: relative;
+    z-index: 2; /* above overlay */
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+
+  .about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1f8291; /* bright red */
+  }
+
+  .about-content .subheading {
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+
+  /********************************
+   *         BOTTOM WAVE
+   ********************************/
+  .bottom-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* less height for a smaller wave */
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+  }
+
+  .bottom-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #065864; /* main red color */
+    /* Simple up/down animation on the wave */
+    animation: wave-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes wave-pulse {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(10px); }
+  }
+
+  /********************************
+   *      FADE-IN JS CLASS
+   ********************************/
+  .fade-in {
+    transition: opacity 1s ease, transform 1s ease;
+  }
+</style>
+<script>
+  // Fade-in effect on load
+  document.addEventListener("DOMContentLoaded", function() {
+    const aboutContent = document.querySelector('.about-content');
+    setTimeout(() => {
+      aboutContent.classList.add('fade-in');
+      aboutContent.style.opacity = 1;
+      aboutContent.style.transform = 'translateY(0)';
+    }, 300);
+  });
+</script>
+
 
   <header>
       <!-- Navbar -->
       <nav class="header-area">
-          <div class="main-nav">
-              <!-- Logo -->
-              <div class="logo">
-                <img width="110px" src="ss.png" alt="سما اور">
-              </div>
-              <!-- Mobile Menu Trigger -->
-              <div class="menu-trigger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </div>
-              <!-- Navigation Links -->
-              <ul class="nav">
-                  <li><a href="indexAR.html#top">الأعلانات</a></li>
-                  <li><a href="indexAR.html#services">الخدمات</a></li>
-                  <li><a href="indexAR.html#about">اسئلة</a></li>
-                  <li><a href="indexAR.html#contact">تواصل</a></li>
-                  <li><a href="aboutAR.html" >عننا</a></li>
-              </ul>
-          </div>
-      </nav>
-    
-    
+        <div class="main-nav">
+            <!-- Logo -->
+            <div class="logo">
+              <img width="110px" src="ss.png" alt="سما اور">
+            </div>
+            <!-- Mobile Menu Trigger -->
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav">
+              <li><a href="indexAR.html#top">الاعلانات</a></li>
+              <li><a href="indexAR.html#services">الخدمات</a></li>
+              <li><a href="indexAR.html#about">اسئلة</a></li>
+              <li><a href="indexAR.html#contact">تواصل</a></li>
+              <li><a href="aboutAR.html"  >عنا</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="about-section"> <div class="about-content">
+      <h1> نظام URCOLLEGE </h1>
+      <div class="subheading">الرئيسية • الخدمات</div>
+    </div></section>
+   
+  
+    <!-- BOTTOM WAVE EFFECT -->
+    <div class="bottom-wave">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <!-- Reduced wave amplitude for a smaller effect -->
+        <path d="M0,80 C150,100 350,60 500,80 L500,150 L0,150 Z"></path>
+      </svg>
+    </div>
       
-      <video autoplay muted loop>
-          <source src="https://videos.pexels.com/video-files/3141210/3141210-sd_640_360_25fps.mp4" type="video/mp4">
-      المتصفح الخاص بك لا يدعم عرض المقاطع
-      </video>
-      <h1> نظام UrCollege</h1>
-      <p class="typing-text">نظام تم اعداده من قبل سما اور</p>
-      <div class="scroll-indicator">
-          اسحب للاسفل  <br>
-          <span>⬇</span>
+      
       </div> 
-       
+      <script>
+          // JavaScript to add the text dynamically and restart the animation
+         
+      </script>
   </header>
     <!-- About Us Section -->
     <section class="about-us">
@@ -962,250 +1259,413 @@ footer::before {
         </script>
         
  
-        <section class="video-section">
-          <div class="background-gradient"></div>
-          <div class="content">
-            <div id="box1" class="text-box active">
-              <h2>تواصل معنا</h2>
-<p>تم تصميم هذا النظام بشكل معاصر ليكون سهل الأستخدام من ابسط الأداريين المحاسبين , تواصل معنا لمعلومات اكثر</p>            </div>
-            <div class="button-container">
-                    <a href="indexAR.html" class="btn" >ارسل لنا رسالة الأن</a>
-          </div>
-          </div>
-        
-          <style>
-              .video-section {
+     
+ <section class="light-section">
+  <div class="dynamic-background">
+      <div class="light-grid"></div>
+      <div class="floating-shapes">
+          <div class="shape s1"></div>
+          <div class="shape s2"></div>
+          <div class="shape s3"></div>
+      </div>
+  </div>
+  
+  <div class="section-content">
+      <h2 class="section-heading">تريد هذا النظام؟</h2>
+      <p class="section-text">تم تصميم هذا النظام بشكل معاصر ليكون سهل الأستخدام من ابسط المحاسبين , تواصل معنا لمعلومات اكثر</p>         
+      <button class="action-button">
+         <a href="indexAR.html#contact"><span style="color: white;">تواصل معنا</span></a> 
+          <div class="button-effects"></div>
+      </button>
+  </div>
+</section>
+
+<style>
+.light-section {
   position: relative;
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 8rem 2rem;
+  background: #ffffff;
   overflow: hidden;
-  background: url('s.jpg') center/cover no-repeat;
-  color: white;
 }
 
-/* Dark Overlay */
-.background-gradient {
+.dynamic-background {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(8, 65, 48, 0.6); /* Semi-transparent black overlay */
-  z-index: 1;
+  top: 0;
+  left: 0;
 }
-            @keyframes gradient-animation {
-              0% { background-position: 0% 50%; }
-              50% { background-position: 100% 50%; }
-              100% { background-position: 0% 50%; }
-            }
-        
-            .content {
-              position: relative;
-              z-index: 2;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              width: 100%; /* Make sure content doesn't overflow horizontally */
-              padding: 20px;
-              text-align: center;
-              color: white;
-              gap: 20px; /* Add spacing between text box and button */
-            }
-        
-            .text-box {
-              margin-top: 20px;
-              padding: 20px;
-              background-color: rgba(0, 0, 0, 0.7);
-              color: white;
-              border-radius: 5px;
-              font-size: 1.4rem;
-              font-weight: 500;                 text-align: center;
-            }
-        
-            .button-container {
-              display: flex;
-              justify-content: center;
-              gap: 15px;
-              flex-wrap: wrap; /* Wrap buttons to avoid overflow */
-              z-index: 2;
-              margin-top: auto; /* Push the buttons to the bottom if there is extra space */
-            }
-        
-            .btn {
-              padding: 10px 20px;
-              background-color: rgba(0, 0, 0, 0.7);
-              border: none;
-              color: white;
-              font-size: 1.2rem;
-              font-weight: 500;                 cursor: pointer;
-              border-radius: 5px;
-              transition: background-color 0.3s ease, transform 0.3s ease;
-            }
-        
-            .btn:hover {
-              background-color: rgba(255, 255, 255, 0.8);
-              color: black;
-            }
-        
-            /* Responsive Design */
-            @media (max-width: 768px) {
-              .video-section {
-                height: 70vh;
-                padding: 10px;
-              }
-        
-              .btn {
-                font-size: 14px;
-                padding: 8px 16px;
-              }
-        
-              .text-box {
-                font-size: 16px;
-                padding: 15px;
-              }
-        
-              .button-container {
-                gap: 10px;
-              }
-            }
-        
-            @media (max-width: 480px) {
-              .video-section {
-                height: 60vh;
-                padding: 10px;
-              }
-        
-              .btn {
-                font-size: 12px;
-                padding: 6px 12px;
-              }
-        
-              .text-box {
-                font-size: 14px;
-                padding: 10px;
-              }
-            }
-          </style>
-        </section>
-        <div class="contact-us-container">
-          <div class="bubble-container">
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                  <feBlend in="SourceGraphic" in2="goo" />
-                </filter>
-              </defs>
-            </svg>
+
+.light-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+      linear-gradient(rgba(245, 245, 245, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 245, 245, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 80s linear infinite;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+.floating-shapes .shape {
+  position: absolute;
+  border-radius: 8px;
+  background: linear-gradient(45deg, rgba(240,240,240,1), rgba(255,255,255,1));
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.03);
+}
+
+.shape.s1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation: float 20s infinite linear;
+}
+
+.shape.s2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 15%;
+  animation: float 25s infinite linear;
+  animation-delay: -5s;
+}
+
+.shape.s3 {
+  width: 160px;
+  height: 160px;
+  bottom: 10%;
+  left: 40%;
+  animation: float 30s infinite linear;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-40px) rotate(5deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+  75% { transform: translateY(-30px) rotate(8deg); }
+}
+
+.section-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+}
+
+.section-heading {
+  font-size: 3rem;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-text {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.action-button {
+  position: relative;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.action-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button-effects {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent 25%,
+      rgba(255,255,255,0.2) 50%,
+      transparent 75%
+  );
+  transition: left 0.6s;
+}
+
+.action-button:hover .button-effects {
+  left: 100%;
+}
+
+.action-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(99,102,241,0.15);
+}
+
+.action-button:active {
+  transform: scale(0.98);
+}
+
+.visible .section-heading,
+.visible .section-text,
+.visible .action-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+      font-size: 2.4rem;
+  }
+  
+  .action-button {
+      padding: 1.2rem 2.5rem;
+  }
+  
+  .shape.s1,
+  .shape.s2,
+  .shape.s3 {
+      display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if(entry.isIntersecting) {
+              entry.target.classList.add('visible');
+          }
+      });
+  }, { threshold: 0.1 });
+
+  observer.observe(document.querySelector('.section-content'));
+
+  document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.shape');
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+
+      shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 0.3;
+          const xMove = (mouseX - 0.5) * 15 * speed;
+          const yMove = (mouseY - 0.5) * 15 * speed;
+          shape.style.transform = `translate(${xMove}px, ${yMove}px)`;
+      });
+  });
+});
+</script>
+        <div class="mobile-contact-footer">
+          <div class="footer-header">
+            <h3>تواصل معنا</h3>
+            <button class="toggle-btn">▼</button>
           </div>
-        
-          <div class="contact-details">
-            <h1>زورونا </h1>
-            <p>سنكون سعداء بزيارتكم لنا</p>
-            <ul>
-           <a  style="color: #bbd1e8;" ,href="https://wa.me/770 263 3615" , target="_blank"><li><strong>رقم الهاتف:</strong> +964 (0) 770 263 3615</li></a>   
-        <a  style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi" , target="_blank"> <li><strong>الايميل الاساسي:</strong>Admin@samaursoft.net</li></a>     
-           <a style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi" , target="_blank"> <li><strong> الايميل القانوي:</strong>Rahman@samaursoft.com</li></a>  
-             <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
-            </ul>
-            <div class="social-media">
-              <a href="#" target="_blank">Instagram</a>
+          
+          <div class="footer-content">
+            <div class="contact-grid">
+              <a href="https://wa.me/7702633615" class="whatsapp-btn">
+                <span class="icon">💬</span>
+                واتساب
+              </a>
+              
+              <a href="mailto:Admin@samaursoft.net" class="email-btn">
+                <span class="icon">📧</span>
+                إيميل
+              </a>
+              
+              <a href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA" class="map-btn">
+                <span class="icon">📍</span>
+                خريطة
+              </a>
             </div>
-            <div class="map">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.434426384731!2d44.45132152451682!3d33.30745637344654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155781f525e1071d%3A0xd3e7eb7dc833043!2z2LTYsdmD2Kkg2LPZhdinINin2YjYsSDZhNiq2YLZhtmK2Kkg2KfZhNmF2LnZhNmI2YXYp9iq!5e0!3m2!1sar!2siq!4v1739264623277!5m2!1sar!2siq"
-                
-                width="100%" height="250" style="border:0;" allowfullscreen></iframe>
-            </div>
+            
+            <a href="#" class="instagram-btn">
+              <span class="icon">📸</span>
+              إنستغرام
+            </a>
           </div>
-        
-   
         </div>
         
         <style>
-  .contact-us-container {
-      width: 100vw;
-    max-height: 64vh; /* Drastically reduced height */
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Keeps content centered */
-      align-items: center;
-      background: linear-gradient(40deg, #065864, #065864);
-      overflow-x: hidden;
-      position: relative;
-      padding: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
-      color: white;
-  }
-  
-  /* Contact Details */
-  .contact-details {
-      text-align: center;
-      z-index: 10;
-      padding: 10px;
-  }
-  
-  .contact-details h1 {
-      font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
-      margin-bottom: 5px;
-  }
-  
-  .contact-details p {
-      font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
-      margin-bottom: 10px;
-  }
-  
-  .contact-details ul {
-      font-size: clamp(12px, 2vw, 14px);
-      margin-bottom: 10px;
-  }
-  
-  /* Social Media Links */
-  .social-media a {
-      text-decoration: none;
-      color: #F18D1B;
-      margin: 0 5px;
-      font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
-      transition: color 0.3s;
-  }
-  
-  .social-media a:hover {
-      color: #065864;
-  }
-  
-  /* Smaller Map Section */
-  .map {
-      width: 90%;
-      max-width: 500px; /* Smaller map */
-      height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
-      margin-top: 10px;
-      border-radius: 6px;
-      overflow: hidden;
-  }
-  
-  /* Footer */
-  .footer {
-      margin-top: 10px;
-      color: #ffffff;
-      font-size: 1.2rem; /* Smaller footer text */
-      font-weight: 400;
-  }
-  
-  /* Hide on Large Screens */
-  @media (min-width: 1024px) {
-      .contact-us-container {
+        .mobile-contact-footer {
           display: none;
-      }
+          position: fixed;
+          left: 10px;
+          bottom: -100%;
+          width: calc(100% - 20px);
+          background: #065864;
+          color: white;
+          border-radius: 15px 15px 0 0;
+          box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+          z-index: 999;
+          transition: all 0.3s ease;
+          padding: 15px;
+        }
+        
+        .footer-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          padding: 10px;
+        direction: rtl;
+          background: #094954;
+          border-radius: 10px;
+        }
+        
+        h3 {
+          font-size: 1.2rem;
+          margin: 0;
+          color: #F18D1B;
+        }
+        
+        .toggle-btn {
+          background: rgba(255,255,255,0.1);
+          border: none;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+          font-size: 1.1rem;
+        }
+        
+        .footer-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          margin: 15px 0;
+        }
+        
+        .whatsapp-btn, .email-btn, .map-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          color: white;
+          padding: 15px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.05);
+          transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover, .email-btn:hover, .map-btn:hover {
+          background: rgba(255,255,255,0.1);
+          transform: translateY(-2px);
+        }
+        
+        .instagram-btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 15px;
+          border-radius: 50px;
+          background: linear-gradient(45deg, #E1306C, #C13584);
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+        
+        .instagram-btn:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .icon {
+          font-size: 1.5rem;
+          margin-bottom: 8px;
+        }
+        
+        /* Active states */
+        .mobile-contact-footer.active {
+          bottom: 10px;
+        }
+        
+        .mobile-contact-footer.active .footer-content {
+          max-height: 500px;
+        }
+        
+        .toggle-btn.rotated {
+          transform: rotate(180deg);
+        }
+       
+  @media (max-width: 1024px) {
+    .mobile-contact-footer {
+      display: block;
+    }
   }
   
+  @media (min-width: 1024px) {
+    .mobile-contact-footer {
+      display: none !important;
+    }
+  }
         </style>
         
+        <script>
+        // Scroll detection
+        window.addEventListener('scroll', () => {
+          const footer = document.querySelector('.mobile-contact-footer');
+          const bodyHeight = document.body.offsetHeight;
+          const windowHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+          
+          const isAtBottom = (windowHeight + scrollY) >= (bodyHeight - 100);
+          
+          if (isAtBottom) {
+            footer.classList.add('active');
+          } else {
+            footer.classList.remove('active');
+          }
+        });
+        
+        // Toggle functionality
+        document.querySelector('.footer-header').addEventListener('click', function() {
+          const footer = this.closest('.mobile-contact-footer');
+          const toggleBtn = this.querySelector('.toggle-btn');
+          const content = footer.querySelector('.footer-content');
+          
+          footer.classList.toggle('collapsed');
+          toggleBtn.classList.toggle('rotated');
+          
+          if (footer.classList.contains('collapsed')) {
+            content.style.maxHeight = '0';
+          } else {
+            content.style.maxHeight = '500px';
+          }
+        });
+        </script>
           
         <footer> 
           <div style="align-items: center ;" class="container">

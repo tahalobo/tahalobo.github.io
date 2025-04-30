@@ -723,7 +723,298 @@ footer::before {
         </div>
 
 </head>
-<body>
+<body>    <style>
+  /********************************
+   *        SECTION WRAPPER
+   ********************************/
+ /* === Modern Tech Background Theme === */
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 100%);
+    color: #0a1929;
+ }
+
+/* Dynamic Grid Pulse */
+.about-section::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(25, 130, 230, 0.1) 0px,
+            rgba(25, 130, 230, 0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(25, 130, 230, 0.1) 0px,
+            rgba(25, 130, 230, 0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    animation: gridPulse 12s linear infinite;
+    transform: translate(-25%, -25%) rotate(15deg);
+    z-index: 1;
+}
+
+/* Floating Tech Particles */
+.about-section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 50% 50%, 
+            rgba(45, 212, 191, 0.1) 0%, 
+            transparent 70%);
+    animation: particleFloat 20s linear infinite;
+    z-index: 2;
+}
+
+/* Holographic Effect */
+.holographic-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(120deg, 
+            rgba(255,255,255,0.3) 0%,
+            rgba(179,217,255,0.1) 50%,
+            rgba(255,255,255,0.3) 100%);
+    animation: hologramScan 8s linear infinite;
+    mix-blend-mode: soft-light;
+    z-index: 3;
+}
+
+/* Animated Code Matrix */
+.code-matrix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    opacity: 0.15;
+    z-index: 4;
+}
+
+.code-column {
+    display: flex;
+    flex-direction: column;
+    animation: codeFlow 20s linear infinite;
+}
+
+.code-character {
+    font-size: 1.2rem;
+    color: #2dd4bf;
+    opacity: 0;
+    animation: characterFade 1.5s ease-in-out infinite;
+}
+
+/* Floating Hexagons */
+.hexagon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.hexagon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(45, 212, 191, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hexFloat 25s linear infinite;
+}
+
+/* Dynamic Glow Effect */
+.glow-effect {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(45, 212, 191, 0.2) 0%,
+        rgba(25, 130, 230, 0.1) 30%,
+        transparent 60%);
+    animation: glowPulse 6s ease-in-out infinite;
+    z-index: 6;
+}
+
+/* ===== Animations ===== */
+@keyframes gridPulse {
+    0% { transform: translate(-25%, -25%) rotate(15deg) scale(1); }
+    50% { transform: translate(-25%, -25%) rotate(15deg) scale(1.2); }
+    100% { transform: translate(-25%, -25%) rotate(15deg) scale(1); }
+}
+
+@keyframes hologramScan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes codeFlow {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes characterFade {
+    0% { opacity: 0; transform: translateY(-10px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes hexFloat {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(720deg); }
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+@keyframes particleFloat {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ===== Content Styling ===== */
+.content {
+    position: relative;
+    z-index: 7;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(25, 130, 230, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(25, 130, 230, 0.1);
+    max-width: 800px;
+    margin: 2rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .code-character { font-size: 1rem; }
+    .content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    .hexagon { width: 40px; height: 40px; }
+}
+
+@media (max-width: 480px) {
+    .code-matrix { gap: 1rem; }
+    .content {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+  /* Dark overlay to increase contrast */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  /********************************
+   *         TEXT CONTENT
+   ********************************/
+  .about-content {
+    position: relative;
+    z-index: 2; /* above overlay */
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+
+  .about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1f8291; /* bright red */
+  }
+
+  .about-content .subheading {
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+
+  /********************************
+   *         BOTTOM WAVE
+   ********************************/
+  .bottom-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* less height for a smaller wave */
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+  }
+
+  .bottom-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #065864; /* main red color */
+    /* Simple up/down animation on the wave */
+    animation: wave-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes wave-pulse {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(10px); }
+  }
+
+  /********************************
+   *      FADE-IN JS CLASS
+   ********************************/
+  .fade-in {
+    transition: opacity 1s ease, transform 1s ease;
+  }
+</style>
+<script>
+  // Fade-in effect on load
+  document.addEventListener("DOMContentLoaded", function() {
+    const aboutContent = document.querySelector('.about-content');
+    setTimeout(() => {
+      aboutContent.classList.add('fade-in');
+      aboutContent.style.opacity = 1;
+      aboutContent.style.transform = 'translateY(0)';
+    }, 300);
+  });
+</script>
+
 
   <header>
       <!-- Navbar -->
@@ -741,27 +1032,34 @@ footer::before {
             </div>
             <!-- Navigation Links -->
             <ul class="nav">
-                <li><a href="indexAR.html#top">الأعلانات</a></li>
+                <li><a href="indexAR.html#top">الاعلانات</a></li>
                 <li><a href="indexAR.html#services">الخدمات</a></li>
                 <li><a href="indexAR.html#about">اسئلة</a></li>
                 <li><a href="indexAR.html#contact">تواصل</a></li>
-                <li><a href="#" class="active">عننا</a></li>
+                <li><a href="#" class="active">عنا</a></li>
             </ul>
         </div>
     </nav>
-    
-    
+    <section class="about-section"> <div class="about-content">
+      <h1>عن سما اور</h1>
+      <div class="subheading">الرئيسية • عنا</div>
+    </div></section>
+   
+  
+    <!-- BOTTOM WAVE EFFECT -->
+    <div class="bottom-wave">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <!-- Reduced wave amplitude for a smaller effect -->
+        <path d="M0,80 C150,100 350,60 500,80 L500,150 L0,150 Z"></path>
+      </svg>
+    </div>
       
-      <video autoplay muted loop>
-          <source src="https://videos.pexels.com/video-files/3141210/3141210-sd_640_360_25fps.mp4" type="video/mp4">
-متصفحك لا يدعم عرض المقاطع      </video>
-      <h1 style="color: #c1bfbf;">عن سما اور</h1>
-      <p class="typing-text">نعمل منذ اكثر من 30 سنة</p>
-      <div class="scroll-indicator">
-          اسحب للاسفل <br>
-          <span>⬇</span>
+      
       </div> 
-      
+      <script>
+          // JavaScript to add the text dynamically and restart the animation
+         
+      </script>
   </header>
     <!-- About Us Section -->
     <section class="about-us">
@@ -815,119 +1113,7 @@ footer::before {
         <h2>من نحن </h2>
 <p>مرحبًا بك في سما أور، إحدى الشركات الرائدة في مجال حلول تكنولوجيا المعلومات في العراق، حيث لدينا أكثر من 30 عامًا من الخبرة في تصميم أنظمة قواعد البيانات المخصصة للعديد من المؤسسات والشركات داخل العراق وخارجه.
 
-</p>    </section>        <div class="contact-us-container">
-  <div class="bubble-container">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-  </div>
-
-  <div class="contact-details">
-    <h1>زورونا </h1>
-    <p>سنكون سعداء بزيارتكم لنا</p>
-    <ul>
-   <a  style="color: #bbd1e8;" ,href="https://wa.me/770 263 3615" , target="_blank"><li><strong>رقم الهاتف:</strong> +964 (0) 770 263 3615</li></a>   
-<a  style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi" , target="_blank"> <li><strong>الايميل الاساسي:</strong>Admin@samaursoft.net</li></a>     
-   <a style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi" , target="_blank"> <li><strong> الايميل القانوي:</strong>Rahman@samaursoft.com</li></a>  
-     <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
-    </ul>
-    <div class="social-media">
-      <a href="#" target="_blank">Instagram</a>
-    </div>
-    <div class="map">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.434426384731!2d44.45132152451682!3d33.30745637344654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155781f525e1071d%3A0xd3e7eb7dc833043!2z2LTYsdmD2Kkg2LPZhdinINin2YjYsSDZhNiq2YLZhtmK2Kkg2KfZhNmF2LnZhNmI2YXYp9iq!5e0!3m2!1sar!2siq!4v1739264623277!5m2!1sar!2siq"
-        
-        width="100%" height="250" style="border:0;" allowfullscreen></iframe>
-    </div>
-  </div>
-
-
-</div>
-
-<style>
-.contact-us-container {
-width: 100vw;
-max-height: 64vh; /* Drastically reduced height */
-display: flex;
-flex-direction: column;
-justify-content: center; /* Keeps content centered */
-align-items: center;
-background: linear-gradient(40deg, #065864, #065864);
-overflow-x: hidden;
-position: relative;
-padding: 10px;
-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
-color: white;
-}
-
-/* Contact Details */
-.contact-details {
-text-align: center;
-z-index: 10;
-padding: 10px;
-}
-
-.contact-details h1 {
-font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
-margin-bottom: 5px;
-}
-
-.contact-details p {
-font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
-margin-bottom: 10px;
-}
-
-.contact-details ul {
-font-size: clamp(12px, 2vw, 14px);
-margin-bottom: 10px;
-}
-
-/* Social Media Links */
-.social-media a {
-text-decoration: none;
-color: #F18D1B;
-margin: 0 5px;
-font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
-transition: color 0.3s;
-}
-
-.social-media a:hover {
-color: #065864;
-}
-
-/* Smaller Map Section */
-.map {
-width: 90%;
-max-width: 500px; /* Smaller map */
-height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
-margin-top: 10px;
-border-radius: 6px;
-overflow: hidden;
-}
-
-/* Footer */
-.footer {
-margin-top: 10px;
-color: #ffffff;
-font-size: 1.2rem; /* Smaller footer text */
-font-weight: 400;
-}
-
-/* Hide on Large Screens */
-@media (min-width: 1024px) {
-.contact-us-container {
-  display: none;
-}
-}
-
-</style>
+</p>    </section>     
 
    <!-- Clients Section -->
    <section class="clients">
@@ -1210,169 +1396,277 @@ font-weight: 400;
     })();
   </script>
 </section>
+<section class="teal-section">
+  <div class="dynamic-background"></div>
+  <div class="section-container">
+      <div class="tab-switcher">
+          <button class="tab-button active" data-tab="store">قصتنا</button>
+          <button class="tab-button" data-tab="mission">مهمتنا</button>
+          <div class="active-highlight"></div>
+      </div>
 
-<section class="video-section">
-  <div class="background-gradient"></div>
-  <div class="content">
-    <div id="box1" class="text-box active">
-      <h2>قصتنا</h2>
-      <p>بفضل أكثر من 30 عامًا من الابتكار والتميز، قادت سما أور مشهد انظمة تكنولوجيا المعلومات في العراق. لقد صممنا نظماً مخصصة لقطاعات متنوعة. قصتنا تعبر عن التفاني اللا متناهي والخبرة. رحلتنا مستمرة، مدفوعة بشغفنا لتقديم حلول استثنائية لعملائنا.
+      <div class="content-container active" id="store">
+          <div class="content-card">
+              <h2 class="content-title">قصتنا</h2>
+                    <p class="content-description">بفضل أكثر من 30 عامًا من الابتكار والتميز، قادت سما أور مشهد انظمة تكنولوجيا المعلومات في العراق. لقد صممنا نظماً مخصصة لقطاعات متنوعة. قصتنا تعبر عن التفاني اللا متناهي والخبرة. رحلتنا مستمرة، مدفوعة بشغفنا لتقديم حلول استثنائية لعملائنا.</p>
 
-      </p>
-    </div>
-    <div id="box2" class="text-box">
-      <h2>مهمتنا</h2>
-      <p>هنا في سما أور، نسعى جاهدين لتقديم أنظمة تكنولوجيا المعلومات مُخصصة و سهلة الاستخدام. نحن نركز على الابتكار ، و سهولة الوصول ، والأمان ، والموثوقية.
+          </div>
+      </div>
 
-      </p>
-    </div>
-    <div class="button-container">
-      <button class="btn active" onclick="showText('box1', this)">قصتنا</button>
-      <button class="btn" onclick="showText('box2', this)">مهمتنا</button>
-    </div>
+      <div class="content-container" id="mission">
+          <div class="content-card">
+              <h2 class="content-title">مهمتنا</h2>
+              <p class="content-description">هنا في سما أور، نسعى جاهدين لتقديم أنظمة تكنولوجيا المعلومات مُخصصة و سهلة الاستخدام. نحن نركز على الابتكار ، و سهولة الوصول ، والأمان ، والموثوقية. </p>
+
+          </div>
+      </div>
   </div>
+</section>
 
-  <style>
-    /* Section Container */
-    .video-section {
+<style>
+.teal-section {
   position: relative;
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 8rem 2rem;
   overflow: hidden;
-  background: url('s.jpg') center/cover no-repeat;
-  color: white;
+  background: linear-gradient(135deg, #1a535c 0%, #0a3439 100%);
 }
 
-/* Dark Overlay */
-.background-gradient {
+.dynamic-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(8, 65, 48, 0.6); /* Semi-transparent black overlay */
-  z-index: 1;
+  background: linear-gradient(45deg, 
+      rgba(26,83,92,0.8) 0%, 
+      rgba(32,129,141,0.6) 50%, 
+      rgba(76,184,196,0.4) 100%);
+  animation: bgFlow 12s infinite linear;
+  opacity: 0.3;
 }
 
-    @keyframes gradient-shift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    /* Content Styling */
-    .content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      width: 90%;
-      max-width: 800px;
-    }
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Text Boxes */
-    .text-box {
-      padding: 30px;
-      background-color: rgba(0, 0, 0, 0.75);
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-      font-size: 1.6rem;
-      font-weight: 500;      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.5s ease;
-      display: none;
-    }
+.tab-switcher {
+  position: relative;
+  display: inline-flex;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 4rem;
+  backdrop-filter: blur(10px);
+}
 
-    .text-box.active {
-      opacity: 1;
-      transform: translateY(0);
-      display: block;
-    }
+.tab-button {
+  padding: 1rem 2.5rem;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
 
-    .text-box h2 {
+.tab-button.active {
+  color: #1a535c;
+}
+
+.active-highlight {
+  position: absolute;
+  background: #88d8d0;
+  height: 80%;
+  top: 10%;
+  border-radius: 40px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(136,216,208,0.3);
+}
+
+.content-container {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
+
+.content-container.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 4rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.content-title {
+  font-size: 2.5rem;
+  color: #1a535c;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #1a535c, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tech-item {
+  padding: 2rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(78,205,196,0.2);
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(78,205,196,0.1);
+}
+
+.tech-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(26,83,92,0.1));
+}
+
+.milestone-roadmap {
+  border-left: 3px solid rgba(78,205,196,0.3);
+  padding-left: 2rem;
+  margin-top: 3rem;
+}
+
+.milestone {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(78,205,196,0.1);
+}
+
+.milestone-bar {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #4ecdc4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.milestone:hover .milestone-bar {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .content-card {
+      padding: 2rem;
+  }
+  
+  .content-title {
       font-size: 2rem;
-      margin-bottom: 15px;
-      color: #F18D1B;
-    }
-
-    .text-box p {
-      line-height: 1.8;
-      color: #EEEEEE;
-    }
-
-    /* Buttons */
-    .button-container {
-      display: flex;
+  }
+  
+  .tab-switcher {
+      width: 100%;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  }
+}
+</style>
 
-    .btn {
-      padding: 12px 30px;
-      font-size: 1rem;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.6);
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-button');
+  const contents = document.querySelectorAll('.content-container');
+  const highlight = document.querySelector('.active-highlight');
+  
+  function activateTab(tab) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      
+      tab.classList.add('active');
+      const target = document.getElementById(tab.dataset.tab);
+      target.classList.add('active');
+      
+      // Move highlight
+      const tabRect = tab.getBoundingClientRect();
+      const containerRect = document.querySelector('.tab-switcher').getBoundingClientRect();
+      highlight.style.width = `${tabRect.width}px`;
+      highlight.style.left = `${tabRect.left - containerRect.left}px`;
+      
+      // Animation reset
+      target.style.opacity = '0';
+      target.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+          target.style.opacity = '1';
+          target.style.transform = 'translateY(0)';
+      }, 50);
+  }
 
-    .btn:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: black;
-      transform: scale(1.1);
-    }
+  tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab));
+  });
 
-    .btn.active {
-      background: linear-gradient(135deg, #5995CC , #065864);
-      color: white;
-      transform: scale(1.15);
-      font-weight: bold;
-    }
+  // Initial position
+  const activeTab = document.querySelector('.tab-button.active');
+  if(activeTab) activateTab(activeTab);
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .video-section {
-        height: 80vh;
-      }
+  // Hover particle effect
+  const bg = document.querySelector('.dynamic-background');
+  document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      bg.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+  });
 
-      .text-box {
-        font-size: 1rem;
-        padding: 20px;
-      }
+  // Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if(entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+          }
+      });
+  }, { threshold: 0.1 });
 
-      .btn {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .video-section {
-        height: 75vh;
-      }
-
-      .text-box {
-        font-size: 0.9rem;
-        padding: 15px;
-      }
-
-      .btn {
-        font-size: 0.8rem;
-        padding: 8px 16px;
-      }
-    }
-  </style>
-
-</section>
+  document.querySelectorAll('.tech-item, .milestone').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      observer.observe(el);
+  });
+});
+</script>
 
   <script>
     // Initialize Default Active Text Box
@@ -1412,120 +1706,191 @@ font-weight: 400;
     });
   </script>
       </section>
-            <div class="contact-us-container">
-          <div class="bubble-container">
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                  <feBlend in="SourceGraphic" in2="goo" />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        
-          <div class="contact-details">
-            <h1>زورونا </h1>
-            <p>سنكون سعداء بزيارتكم لنا</p>
-            <ul>
-           <a  style="color: #bbd1e8;" ,href="https://wa.me/770 263 3615" , target="_blank"><li><strong>رقم الهاتف:</strong> +964 (0) 770 263 3615</li></a>   
-        <a  style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi" , target="_blank"> <li><strong>الايميل الاساسي:</strong>Admin@samaursoft.net</li></a>     
-           <a style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi" , target="_blank"> <li><strong> الايميل القانوي:</strong>Rahman@samaursoft.com</li></a>  
-             <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
-            </ul>
-            <div class="social-media">
-              <a href="#" target="_blank">Instagram</a>
-            </div>
-            <div class="map">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.434426384731!2d44.45132152451682!3d33.30745637344654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155781f525e1071d%3A0xd3e7eb7dc833043!2z2LTYsdmD2Kkg2LPZhdinINin2YjYsSDZhNiq2YLZhtmK2Kkg2KfZhNmF2LnZhNmI2YXYp9iq!5e0!3m2!1sar!2siq!4v1739264623277!5m2!1sar!2siq"
-                
-                width="100%" height="250" style="border:0;" allowfullscreen></iframe>
-            </div>
-          </div>
-        
-   
+      <div class="mobile-contact-footer">
+        <div class="footer-header">
+          <h3>تواصل معنا</h3>
+          <button class="toggle-btn">▼</button>
         </div>
         
-        <style>
-  .contact-us-container {
-      width: 100vw;
-    max-height: 64vh; /* Drastically reduced height */
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Keeps content centered */
-      align-items: center;
-      background: linear-gradient(40deg, #065864, #065864);
-      overflow-x: hidden;
-      position: relative;
-      padding: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
-      color: white;
-  }
-  
-  /* Contact Details */
-  .contact-details {
-      text-align: center;
-      z-index: 10;
-      padding: 10px;
-  }
-  
-  .contact-details h1 {
-      font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
-      margin-bottom: 5px;
-  }
-  
-  .contact-details p {
-      font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
-      margin-bottom: 10px;
-  }
-  
-  .contact-details ul {
-      font-size: clamp(12px, 2vw, 14px);
-      margin-bottom: 10px;
-  }
-  
-  /* Social Media Links */
-  .social-media a {
-      text-decoration: none;
-      color: #F18D1B;
-      margin: 0 5px;
-      font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
-      transition: color 0.3s;
-  }
-  
-  .social-media a:hover {
-      color: #065864;
-  }
-  
-  /* Smaller Map Section */
-  .map {
-      width: 90%;
-      max-width: 500px; /* Smaller map */
-      height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
-      margin-top: 10px;
-      border-radius: 6px;
-      overflow: hidden;
-  }
-  
-  /* Footer */
-  .footer {
-      margin-top: 10px;
-      color: #ffffff;
-      font-size: 1.2rem; /* Smaller footer text */
-      font-weight: 400;
-  }
-  
-  /* Hide on Large Screens */
-  @media (min-width: 1024px) {
-      .contact-us-container {
-          display: none;
+        <div class="footer-content">
+          <div class="contact-grid">
+            <a href="https://wa.me/7702633615" class="whatsapp-btn">
+              <span class="icon">💬</span>
+              واتساب
+            </a>
+            
+            <a href="mailto:Admin@samaursoft.net" class="email-btn">
+              <span class="icon">📧</span>
+              إيميل
+            </a>
+            
+            <a href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA" class="map-btn">
+              <span class="icon">📍</span>
+              خريطة
+            </a>
+          </div>
+          
+          <a href="#" class="instagram-btn">
+            <span class="icon">📸</span>
+            إنستغرام
+          </a>
+        </div>
+      </div>
+      
+      <style>
+      .mobile-contact-footer {
+        display: none;
+        position: fixed;
+        left: 10px;
+        bottom: -100%;
+        width: calc(100% - 20px);
+        background: #065864;
+        color: white;
+        border-radius: 15px 15px 0 0;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        z-index: 999;
+        transition: all 0.3s ease;
+        padding: 15px;
       }
+      
+      .footer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+        background: #094954;
+        border-radius: 10px;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #F18D1B;
+      }
+      
+      .toggle-btn {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+      
+      .footer-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 15px 0;
+      }
+      
+      .whatsapp-btn, .email-btn, .map-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.05);
+        transition: all 0.3s ease;
+      }
+      
+      .whatsapp-btn:hover, .email-btn:hover, .map-btn:hover {
+        background: rgba(255,255,255,0.1);
+        transform: translateY(-2px);
+      }
+      
+      .instagram-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #E1306C, #C13584);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .instagram-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+      
+      .icon {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+      
+      /* Active states */
+      .mobile-contact-footer.active {
+        bottom: 10px;
+      }
+      
+      .mobile-contact-footer.active .footer-content {
+        max-height: 500px;
+      }
+      
+      .toggle-btn.rotated {
+        transform: rotate(180deg);
+      }
+      
+  @media (max-width: 1024px) {
+    .mobile-contact-footer {
+      display: block;
+    }
   }
   
-        </style>
+  @media (min-width: 1024px) {
+    .mobile-contact-footer {
+      display: none !important;
+    }
+  }
+      </style>
+      
+      <script>
+      // Scroll detection
+      window.addEventListener('scroll', () => {
+        const footer = document.querySelector('.mobile-contact-footer');
+        const bodyHeight = document.body.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollY = window.scrollY;
         
+        const isAtBottom = (windowHeight + scrollY) >= (bodyHeight - 100);
+        
+        if (isAtBottom) {
+          footer.classList.add('active');
+        } else {
+          footer.classList.remove('active');
+        }
+      });
+      
+      // Toggle functionality
+      document.querySelector('.footer-header').addEventListener('click', function() {
+        const footer = this.closest('.mobile-contact-footer');
+        const toggleBtn = this.querySelector('.toggle-btn');
+        const content = footer.querySelector('.footer-content');
+        
+        footer.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('rotated');
+        
+        if (footer.classList.contains('collapsed')) {
+          content.style.maxHeight = '0';
+        } else {
+          content.style.maxHeight = '500px';
+        }
+      });
+      </script>
       <footer> 
         <div style="align-items: center ;" class="container">
           <div class="col-lg-12">

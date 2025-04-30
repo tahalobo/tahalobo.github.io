@@ -377,120 +377,193 @@
       </div>
     </div>
   </div>
-  <div class="contact-us-container">
-    <div class="bubble-container">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </defs>
-      </svg>
+  <div class="mobile-contact-footer">
+    <div class="footer-header">
+      <h3>تواصل معنا</h3>
+      <button class="toggle-btn">▼</button>
     </div>
-  
-    <div class="contact-details">
-      <h1 style="color: white;">زورونا </h1>
-      <p style="color: rgb(166, 158, 158);">سنكون سعداء بزيارتكم لنا</p>
-      <ul>
-     <a  style="color: #bbd1e8;" ,href="https://wa.me/770 263 3615" , target="_blank"><li><strong>رقم الهاتف:</strong> +964 (0) 770 263 3615</li></a>   
-  <a  style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Admin@samaursoft.net.com&su=Hello&body=Hi" , target="_blank"> <li><strong>الايميل الاساسي:</strong>Admin@samaursoft.net</li></a>     
-     <a style="color: #bbd1e8;" ,href="https://mail.google.com/mail/?view=cm&fs=1&to=Rahman@samaursoft.com&su=Hello&body=Hi" , target="_blank"> <li><strong> الايميل القانوي:</strong>Rahman@samaursoft.com</li></a>  
-       <a style="color: #bbd1e8;" ,href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA"  , target="_blank"> <li><strong>موقعنا : </strong> بغداد - شارع الصناعة - مجمع الفيصل التجاري - طابق 2 شقة 3
-      </ul>
-      <div class="social-media">
-        <a href="#" target="_blank">Instagram</a>
+    
+    <div class="footer-content">
+      <div class="contact-grid">
+        <a href="https://wa.me/7702633615" class="whatsapp-btn">
+          <span class="icon">💬</span>
+          واتساب
+        </a>
+        
+        <a href="mailto:Admin@samaursoft.net" class="email-btn">
+          <span class="icon">📧</span>
+          إيميل
+        </a>
+        
+        <a href="https://maps.app.goo.gl/h7UA8DX5D2nRxG1KA" class="map-btn">
+          <span class="icon">📍</span>
+          خريطة
+        </a>
       </div>
-      <div class="map">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.434426384731!2d44.45132152451682!3d33.30745637344654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155781f525e1071d%3A0xd3e7eb7dc833043!2z2LTYsdmD2Kkg2LPZhdinINin2YjYsSDZhNiq2YLZhtmK2Kkg2KfZhNmF2LnZhNmI2YXYp9iq!5e0!3m2!1sar!2siq!4v1739264623277!5m2!1sar!2siq"
-          
-          width="100%" height="250" style="border:0;" allowfullscreen></iframe>
-      </div>
+      
+      <a href="#" class="instagram-btn">
+        <span class="icon">📸</span>
+        إنستغرام
+      </a>
     </div>
-  
-
   </div>
   
   <style>
-.contact-us-container {
-  width: 100%;
-  max-height: 64vh; /* Drastically reduced height */
-display: flex;
-flex-direction: column;
-justify-content: center; /* Keeps content centered */
-align-items: center;
-background: linear-gradient(40deg, #065864, #065864);
-overflow-x: hidden;
-position: relative;
-padding: 10px;
-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
-color: white;
-}
-
-/* Contact Details */
-.contact-details {
-text-align: center;
-z-index: 10;
-padding: 10px;
-}
-
-.contact-details h1 {
-font-size: clamp(18px, 4vw, 24px); /* Smaller heading */
-margin-bottom: 5px;
-}
-
-.contact-details p {
-font-size: clamp(12px, 2.5vw, 14px); /* Smaller text */
-margin-bottom: 10px;
-}
-
-.contact-details ul {
-font-size: clamp(12px, 2vw, 14px);
-margin-bottom: 10px;
-}
-
-/* Social Media Links */
-.social-media a {
-text-decoration: none;
-color: #F18D1B;
-margin: 0 5px;
-font-size: clamp(12px, 2vw, 14px); /* Smaller icons */
-transition: color 0.3s;
-}
-
-.social-media a:hover {
-color: #065864;
-}
-
-/* Smaller Map Section */
-.map {
-width: 90%;
-max-width: 500px; /* Smaller map */
-height: clamp(150px, 30vh, 250px); /* Greatly reduced height */
-margin-top: 10px;
-border-radius: 6px;
-overflow: hidden;
-}
-
-/* Footer */
-.footer {
-margin-top: 10px;
-color: #ffffff;
-font-size: 1.2rem; /* Smaller footer text */
-font-weight: 400;
-}
-
-/* Hide on Large Screens */
-@media (min-width: 1024px) {
-.contact-us-container {
+  .mobile-contact-footer {
     display: none;
-}
-}
-
+    position: fixed;
+    left: 10px;
+    bottom: -100%;
+    width: calc(100% - 20px);
+    background: #065864;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    padding: 15px;
+  }
+  
+  .footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    direction: rtl;
+    background: #094954;
+    border-radius: 10px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #F18D1B;
+  }
+  
+  .toggle-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+  }
+  
+  .footer-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .whatsapp-btn, .email-btn, .map-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-btn:hover, .email-btn:hover, .map-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+  }
+  
+  .instagram-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #E1306C, #C13584);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .instagram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  /* Active states */
+  .mobile-contact-footer.active {
+    bottom: 10px;
+  }
+  
+  .mobile-contact-footer.active .footer-content {
+    max-height: 500px;
+  }
+  
+  .toggle-btn.rotated {
+    transform: rotate(180deg);
+  }
+    
+  
+  @media (max-width: 1024px) {
+    .mobile-contact-footer {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mobile-contact-footer {
+      display: none !important;
+    }
+  }
   </style>
   
+  <script>
+  // Scroll detection
+  window.addEventListener('scroll', () => {
+    const footer = document.querySelector('.mobile-contact-footer');
+    const bodyHeight = document.body.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    const isAtBottom = (windowHeight + scrollY) >= (bodyHeight - 100);
+    
+    if (isAtBottom) {
+      footer.classList.add('active');
+    } else {
+      footer.classList.remove('active');
+    }
+  });
+  
+  // Toggle functionality
+  document.querySelector('.footer-header').addEventListener('click', function() {
+    const footer = this.closest('.mobile-contact-footer');
+    const toggleBtn = this.querySelector('.toggle-btn');
+    const content = footer.querySelector('.footer-content');
+    
+    footer.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('rotated');
+    
+    if (footer.classList.contains('collapsed')) {
+      content.style.maxHeight = '0';
+    } else {
+      content.style.maxHeight = '500px';
+    }
+  });
+  </script>
   <footer style="direction: rtl;" > 
     <div style="align-items: center ;" class="container">
       <div class="col-lg-12">
