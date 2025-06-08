@@ -41,37 +41,97 @@
   </div>
   
  
-  <header class="header-area header-sticky">
+<header class="header-area header-sticky">
     <div class="container">
         <div class="row">
             <div class="col-12">
-              <!-- Navbar -->
-      <nav class="header-area">
-        <div class="main-nav">
-            <!-- Logo -->
-            <div class="logo">
-              <img width="110px" src="ss.png" alt="سما اور">
+                <!-- Navbar -->
+                <nav class="header-area">
+                    <div class="main-nav">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <img width="110px" src="ss.png" alt="سما اور">
+                        </div>
+                        <!-- Mobile Menu Trigger -->
+                        <div class="menu-trigger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <!-- Navigation Links -->
+                        <ul class="nav">
+                           <li><a href="index.html" id="adsLink">Banners</a></li>           <li><a href="index.html#services" class="same-page-link">Services</a></li>
+<li><a href="index.html#about" class="same-page-link">Q/A</a></li>
+<li><a href="index.html#contact" class="same-page-link">Contact</a>
+                            <li><a href="about.htm">About</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <!-- Mobile Menu Trigger -->
-            <div class="menu-trigger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <!-- Navigation Links -->
-            <ul class="nav">
-                <li><a href="index.html#top">Banners</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#about">Q/A</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="about.htm" >About</a></li>
-            </ul>
         </div>
-    </nav>
-            </div>
-        </div>
-    </div>
-  </header> 
+    </div><script>
+// Add event listeners to same-page links
+document.querySelectorAll('a.same-page-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    // Only handle if already on indexAR.html
+    if (window.location.pathname.endsWith('/index.html')) {
+      e.preventDefault();
+      const hash = this.getAttribute('href').split('#')[1];
+      
+      // Force reload with cache busting
+      window.location.href = window.location.pathname + '?reload=' + Date.now() + '#' + hash;
+    }
+  });
+});
+
+// Scroll to anchor after reload
+window.addEventListener('load', function() {
+  // Remove cache-busting parameter from URL
+  if (window.location.search.includes('reload=')) {
+    const cleanUrl = window.location.origin + 
+                    window.location.pathname + 
+                    window.location.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+  
+  // Scroll to anchor if present in URL
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'instant'
+      });
+    }
+  }
+});
+</script>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const menuTrigger = document.querySelector('.menu-trigger');
+    const mobileMenu = document.querySelector('.nav'); // The navigation list itself
+
+    // Close menu function
+    function closeMenu() {
+        menuTrigger.classList.remove('active');
+        mobileMenu.classList.remove('active'); // Remove active class from nav
+    }
+
+    // Add click event to all nav links
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Hamburger menu toggle
+    menuTrigger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+});
+</script>
 <!-- ***** Header Area End ***** -->
 
   <!-- ***** Header Area End ***** -->

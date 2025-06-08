@@ -59,10 +59,9 @@
             </div>
             <!-- Navigation Links -->
             <ul class="nav">
-                <li><a href="https://tahalobo.github.io/indexAR.html#top">الأعلانات</a></li>
-                <li><a href="https://tahalobo.github.io/indexAR.html#services">الخدمات</a></li>
-                <li><a href="https://tahalobo.github.io/indexAR.html#about">اسئلة</a></li>
-                <li><a href="indexAR.html#contact">تواصل</a></li>
+<li><a href="indexAR.html" id="adsLink">الأعلانات</a></li>           <li><a href="indexAR.html#services" class="same-page-link">الخدمات</a></li>
+<li><a href="indexAR.html#about" class="same-page-link">اسئلة</a></li>
+<li><a href="indexAR.html#contact" class="same-page-link">تواصل</a></li>
                 <li><a href="aboutAR.html" >عننا</a></li>
             </ul>
         </div>
@@ -70,6 +69,44 @@
             </div>
         </div>
     </div>
+
+<script>
+// Add event listeners to same-page links
+document.querySelectorAll('a.same-page-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    // Only handle if already on indexAR.html
+    if (window.location.pathname.endsWith('/indexAR.html')) {
+      e.preventDefault();
+      const hash = this.getAttribute('href').split('#')[1];
+      
+      // Force reload with cache busting
+      window.location.href = window.location.pathname + '?reload=' + Date.now() + '#' + hash;
+    }
+  });
+});
+
+// Scroll to anchor after reload
+window.addEventListener('load', function() {
+  // Remove cache-busting parameter from URL
+  if (window.location.search.includes('reload=')) {
+    const cleanUrl = window.location.origin + 
+                    window.location.pathname + 
+                    window.location.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+  
+  // Scroll to anchor if present in URL
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'instant'
+      });
+    }
+  }
+});
+</script>
   </header>
   <!-- ***** Header Area End ***** -->
   
